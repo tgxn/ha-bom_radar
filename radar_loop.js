@@ -62,9 +62,9 @@ function drawBasic(imageViewContext, loadedImages, under) {
 }
 
 function drawTimeString(imageViewContext, textContent) {
-  imageViewContext.font = "20px Arial";
+  imageViewContext.font = "20px Courier New";
   imageViewContext.fillStyle = "black";
-  imageViewContext.fillText(textContent, 0, 40);
+  imageViewContext.fillText(textContent, 10, 40);
 }
 
 // -------------------
@@ -113,7 +113,7 @@ async function generateLoopImages(radarLoopID) {
   let loopImages = [];
   for (let i = 0; i < loopImageCount; i++) {
     const thisRadarTime = getRadarTimeString(new Date(timestamp));
-    const thisReadTime = new Date(timestamp).toLocaleString();
+    const thisReadTime = new Date(timestamp).toLocaleTimeString();
     const imageUrl = `http://www.bom.gov.au/radar/${radarLoopID}.T.${thisRadarTime}.png`;
     loopImages.push([imageUrl, thisReadTime]);
 
