@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BoM Radar Image Loop</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #radar_loop {
+        image-rendering: optimizeSpeed;
+        image-rendering: crisp-edges;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        -ms-interpolation-mode: nearest-neighbor;
+      }
+    </style>
+
+    <script src="radar_loop.js"></script>
+  </head>
+
+  <body>
+    <canvas id="radar_loop"></canvas>
+  </body>
+</html>
