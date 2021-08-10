@@ -2,7 +2,7 @@ const loopImageCount = 8; // 7 is default from them (+1 since we might miss the 
 const radarLoopID = "IDR703";
 const drawLocalTimeString = true;
 const frameDuration = 750;
-const reloadMinutes = 10;
+const reloadMinutes = 30;
 
 // -------------
 
@@ -33,7 +33,7 @@ async function main() {
   // -----------
 
   let loopIndex = 1;
-  const timer = setInterval(() => {
+  const frameTimer = setInterval(() => {
     drawFrame(imageViewContext, staticImages, loopImages, loopTexts, loopIndex);
 
     loopIndex++;
@@ -41,6 +41,9 @@ async function main() {
       loopIndex = 0;
     }
   }, frameDuration);
+  const reloadTimer = setInterval(() => {
+    location.reload();
+  }, reloadMinutes * 60 * 1000);
 }
 
 function drawFrame(imageViewContext, staticImages, loopImages, loopTexts, frame) {
